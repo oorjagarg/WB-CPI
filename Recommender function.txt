@@ -1,0 +1,55 @@
+RECOMMENDER FUNCTION
+
+1. START
+2. DECLARE month, state and region
+3. GET month, state and region from the user.
+4. IF month is January or December or November or February or March Then 
+    	INITIALIZE season= “Rabi”
+   ENDIF
+5. IF month is October or November Then 
+    	INITIALIZE season1= “Autumn” 
+   ENDIF
+6. IF month is June or July or August or September Then
+        INITIALISE season2= "Kharif" 
+   ENDIF
+7. IF month is March or April or May Then
+        INITIALISE season3= "Summer" 
+   ENDIF
+8. IF month is December or January or February Then
+        INITIALISE season4= "Winter" 
+   ENDIF 
+9. INITIALISE season5= "Whole Year"
+10. INITIALISE a dataframe1 where the state, region and season or season1 or season2 match the main dataset
+11. INITIALISE a dataframe2 where the state, region and season3 match the main dataset  
+12. INITIALISE variable a is ProdPerArea from the dataframe1 and SET b to a list of a.
+13. DECLARE arrays max_prod, crop_list, temp_list,rain_list, prod_list, cr, temp,rain,prod, seed1_list, seed2_list, s1_list, s2_list, wind_list, hum_list, s1, s2, seed1, seed2, wind, hum
+14. FOR range of length of a
+	14.1. SET m=maximum of b
+	14.2.  IF m is greater than 1 THEN
+		14.2.1.  append m to max_prod
+		14.2.2. INITIALISE cr to crop in dataframe where Produce Per Area is equal to m.
+		14.2.3. INITIALISE temp to temperature in dataframe where Produce Per Area is equal to m.
+		14.2.4. INITIALISE rain to rainfall in dataframe where Produce Per Area is equal to m
+		14.2.5. INITIALISE s1,s2 to Soil1, Soil2 respectively in dataframe where Produce Per Area is equal to m
+		14.2.6. INITIALISE seed1,seed2 to Seed Type1, Seed Type2 respectively in dataframe where Produce Per Area is equal to m
+		14.2.7. INITIALISE wind, hum to wind speed, humidity respectively in dataframe where Produce Per Area is equal to m
+		14.2.8. SET prod is equal to m
+		END IF  	
+	14.3.  SET x, y, z, p, q, r, s, w, h as the first value of cr , temp, rain, s1, s2, seed1, seed2, wind, hum, respectively
+	14.4.  IF x not in crop_list THEN
+		14.4.1. Append x to crop_list
+		14.4.2. Append y to temp_list
+		14.4.3. Append z to rain_list
+		14.4.4.   Append p to s1_list
+		14.4.5.   Append q to s2_list
+		14.4.6   Append r to seed1_list
+		14.4.7   Append s to seed2_list
+		14.4.8  Append h to hum_list
+		14.4.9   Append w to wind_list
+		14.4.10  Append prod to prod_list
+		END IF
+	14.5 REMOVE m from b
+	END FOR
+15. REPEAT STEPS 10-12 for dataframe2.
+16. PRINT  crop_list, temp_list, rain_list, prod_list in the desired format for both the dataframes
+17. STOP

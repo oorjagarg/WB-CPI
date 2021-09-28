@@ -1,0 +1,9 @@
+K-MEANS CLUSTERING
+
+1. START
+2. INITIALIZE a 2-dimensional array p for ProdPerArea and crop_index
+3. INITIALISE n_clusters to the value found in elbow graph
+4. Find the centroids of the clusters
+5. Assign each item a value that is closest to a centroid 
+6. SET y_kmeans to predicted clusters of array p
+7. STOP
